@@ -1,15 +1,46 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larry's Flowers</title>
-    <link rel="icon" type="image/x-icon" href="Media/pictures/favicon_io/favicon.ico">
-    * {
-        cursor: url(...Media/pictures/moon.png), auto;
-    }
+    <title>Morgan Martin Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <h1>Larry's Flowers</h1>
+    <header>
+        <h1>Morgan Martin's Creative Athletics Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="athletics.html">Juniata Athletics</a>
+            <a href="fieldhockey.html">Field Hockey</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome!</h2>
+            <p>This portfolio showcases the design work I’ve done with Juniata Athletics, especially for the field hockey program.</p>
+            <div class="gallery">
+                <img src="images/home1.jpg" alt="Home Image 1">
+                <img src="images/home2.jpg" alt="Home Image 2">
+                <img src="images/home3.jpg" alt="Home Image 3">
+            </div>
+        </section>
+        <section>
+            <h2>Contact Me</h2>
+            <form onsubmit="return handleSubmit()">
+                <label>Name: <input type="text" id="nameInput"></label><br>
+                <label>Interested in:</label>
+                <input type="checkbox" id="design">Design
+                <input type="checkbox" id="athletics">Athletics<br>
+                <label>Role:</label>
+                <input type="radio" name="role" value="student">Student
+                <input type="radio" name="role" value="recruiter">Recruiter<br>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="response"></p>
+        </section>
+    </main>
 </body>
 </html>
