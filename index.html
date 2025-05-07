@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Morgan Martin Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -27,20 +26,37 @@
             </div>
         </section>
         <section>
-            <h2>Contact Me</h2>
-            <form onsubmit="return handleSubmit()">
-                <label>Name: <input type="text" id="nameInput"></label><br>
+            <h2 id="contactTitle">Contact Me</h2>
+            <form id="myForm">
+                <label>Name:</label> <input type="text" id="nameInput"><br>
                 <label>Interested in:</label>
                 <input type="checkbox" id="design">Design
                 <input type="checkbox" id="athletics">Athletics<br>
                 <label>Role:</label>
                 <input type="radio" name="role" value="student">Student
                 <input type="radio" name="role" value="recruiter">Recruiter<br>
+            <p id="response"></p> <br>
                 <button type="reset">Reset</button>
-                <button type="submit">Submit</button>
+                <input type="submit" value="Submit">
             </form>
-            <p id="response"></p>
         </section>
     </main>
+    <script>
+
+        document.getElementById("myForm").onsubmit = function() {handleSubmit()};
+        function handleSubmit() {
+            event.preventDefault();
+            const name = document.getElementById("nameInput").value;
+            const message = name ? "Thank you, " + name + "!" : "Please enter your name.";
+            document.getElementById("response").innerHTML = message;
+            const nameInput = document.getElementById("nameInput").value.trim();
+            const contactTitle = document.getElementById("contactTitle");
+            if (nameInput) {
+                contactTitle.innerHTML = "Hello " + nameInput;
+            } else {
+                contactTitle.innerHTML = "Contact Me";
+            } 
+        }
+    </script>
 </body>
 </html>
